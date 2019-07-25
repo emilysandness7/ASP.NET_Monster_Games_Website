@@ -1,0 +1,53 @@
+﻿@model MonsterGames.Models.UserStat
+
+@{
+  ViewBag.Title = "User Details MWC";
+}
+
+<h2>Details for: @Html.DisplayFor(model => model.PlayerName)</h2>
+<hr />
+<h3>Monster Wants Candy Statistics</h3>
+
+<div>
+  <h4></h4>
+  <hr />
+  <dl class="dl-horizontal">
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCTimesPlayed)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCTimesPlayed)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCBestScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCBestScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCWorstScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCWorstScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCAverageScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCAverageScore)
+    </dd>
+
+  </dl>
+</div>
+<p>
+  @Html.ActionLink("Back to Detailed Leaderboard - Monster Wants Candy", "MWCLeaderboard")
+</p>
+

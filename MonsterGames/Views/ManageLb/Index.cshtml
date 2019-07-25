@@ -1,0 +1,23 @@
+﻿@{
+  ViewBag.Title = "Manage Leaderboards";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage Players and Scores</h2>
+<h4>Welcome Admin!</h4>
+<hr />
+<p>
+  @Html.ActionLink("Delete All Scores for a Player", "DelPlayerScores")
+</p>
+
+<p>
+  @Html.ActionLink("Delete All Scores for a Leaderboard", "DelLbScores")
+</p>
+
+<p>
+  @Html.ActionLink("Delete All Scores for all Leaderboards", "DelLbAllScores")
+</p>
+
+<p>
+  @Html.ActionLink("Manage Admins", "ManageAdmins")
+</p>

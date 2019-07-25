@@ -1,0 +1,40 @@
+﻿@model MonsterGames.Models.Leaderboard
+
+@{
+  ViewBag.Title = "Delete Lb Scores";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Scores for a Leaderboard</h2>
+
+@using (Html.BeginForm("DelLbScoresSelect", "ManageLb", FormMethod.Post))
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <h4>Select a Game to Delete Scores For</h4>
+    <hr />
+    <div class="form-group">
+      <p><b>Warning!</b> Once you press the delete button ALL scores for that leaderboard will be erased.</p>
+      <br/>
+      @Html.LabelFor(model => model.GameName, "Game Name", htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.DropDownList("GameName", new SelectList(ViewBag.GameName, "Text", "Value"))
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Delete" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+}
+
+<div>
+  @Html.ActionLink("Back to Admin Controls Page", "Index")
+</div>
+
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+}

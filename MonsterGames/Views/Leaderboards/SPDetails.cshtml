@@ -1,0 +1,53 @@
+﻿@model MonsterGames.Models.UserStat
+
+@{
+  ViewBag.Title = "User Details SP";
+}
+
+<h2>Details for: @Html.DisplayFor(model => model.PlayerName)</h2>
+<hr />
+<h3>Solo Pong Statistics</h3>
+
+<div>
+  <h4></h4>
+  <hr />
+  <dl class="dl-horizontal">
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPTimesPlayed)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPTimesPlayed)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPBestScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPBestScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPWorstScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPWorstScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPAverageScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPAverageScore)
+    </dd>
+
+  </dl>
+</div>
+<p>
+  @Html.ActionLink("Back to Detailed Leaderboard - Solo Pong", "SPLeaderboard")
+</p>
+

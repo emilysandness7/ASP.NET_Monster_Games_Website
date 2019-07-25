@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MonsterGames.Models.Leaderboard>
+@using MonsterGames.Models
+
+@{
+  ViewBag.Title = "MWC Leaderboard";
+}
+
+<h2>Monster Wants Candy Leaderboard</h2>
+<hr />
+<p><strong>Want to try to beat the high score?</strong></p>
+<p><a class="btn btn-default" href="~/Games/MonsterWantsCandy">Play Now! &raquo;</a></p>
+
+<table class="table">
+  <tr>
+    <th>
+      @Html.DisplayNameFor(model => model.PlayerName)
+    </th>
+    <th>
+      @Html.DisplayNameFor(model => model.Score)
+    </th>
+    <th>
+      @Html.DisplayNameFor(model => model.ScoreDate)
+    </th>
+    <th></th>
+  </tr>
+
+  @foreach (var item in Model)
+  {
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => item.PlayerName)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.Score)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.ScoreDate)
+      </td>
+      <td>
+        @Html.ActionLink("User's Stats", "MWCDetails", new { id = item.LeaderboardId })
+
+        @*Show delete button if user owns the score or if user is admin*@
+        @if ((User.IsInRole(ApplicationConstants.Admin)) ||
+          ((item.PlayerName != null) && (item.PlayerName.Equals(User.Identity.Name))))
+        {
+          <text> |</text>
+          @Html.ActionLink("Delete", "Delete", new { id = item.LeaderboardId })
+        }
+      </td>
+    </tr>
+  }
+
+</table>

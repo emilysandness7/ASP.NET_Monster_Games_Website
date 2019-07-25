@@ -1,0 +1,50 @@
+﻿@model MonsterGames.Models.UserStat
+@{
+    ViewBag.Title = "MWC Stats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Monster Wants Candy Statistics</h2>
+
+<div>
+  <hr />
+  <dl class="dl-horizontal">
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCTimesPlayed)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCTimesPlayed)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCBestScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCBestScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCWorstScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCWorstScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.MWCAverageScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.MWCAverageScore)
+    </dd>
+
+  </dl>
+</div>
+<p>
+  @Html.ActionLink("Back to Manage Account Page", "Index")
+</p>
+

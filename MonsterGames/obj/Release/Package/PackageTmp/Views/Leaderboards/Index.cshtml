@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MonsterGames.Models.Leaderboard>
+@using MonsterGames.Models
+
+@{
+  ViewBag.Title = "All Leaderboards";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Leaderboards Overview</h2>
+<hr/>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Monster Wants Candy Scores  
+    <a class="btn btn-default" href="~/Leaderboards/MWCLeaderboard">View in More Detail &raquo;</a></h3>
+        <table class="table">
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.ScoreDate)
+        </th>
+        <th></th>
+      </tr>
+
+      @foreach (var item in Model.Where(x => x.GameName.Equals(ApplicationConstants.GAME_MWC)))
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.PlayerName)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Score)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.ScoreDate)
+          </td>
+        </tr>
+      }
+    </table>
+  </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Solo Pong Scores  
+    <a class="btn btn-default" href="~/Leaderboards/SPLeaderboard">View in More Detail &raquo;</a></h3>
+    <table class="table">
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.ScoreDate)
+        </th>
+        <th></th>
+      </tr>
+
+      @foreach (var item in Model.Where(x => x.GameName.Equals(ApplicationConstants.GAME_SP)))
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.PlayerName)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Score)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.ScoreDate)
+          </td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>
+  </div>

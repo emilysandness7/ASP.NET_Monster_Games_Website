@@ -1,0 +1,51 @@
+﻿@model MonsterGames.Models.UserStat
+
+@{
+    ViewBag.Title = "SP Stats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Solo Pong Statistics</h2>
+
+<div>
+  <hr />
+  <dl class="dl-horizontal">
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPTimesPlayed)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPTimesPlayed)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPBestScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPBestScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPWorstScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPWorstScore)
+    </dd>
+
+    <dt>
+      @Html.DisplayNameFor(model => model.SPAverageScore)
+    </dt>
+
+    <dd>
+      @Html.DisplayFor(model => model.SPAverageScore)
+    </dd>
+
+  </dl>
+</div>
+<p>
+  @Html.ActionLink("Back to Manage Account Page", "Index")
+</p>
+

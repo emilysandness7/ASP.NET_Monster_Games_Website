@@ -1,0 +1,203 @@
+﻿@{
+  ViewBag.Title = "Changelog";
+}
+
+<h2>Changelog</h2>
+<hr />
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Lab 1</h3>
+    <hr />
+    <p><b>October 2, 2015</b></p>
+    <ul>
+      <li>Created Home page</li>
+      <li>Created About page</li>
+      <li>Created Contact page</li>
+      <li>Created Leaderboard page</li>
+      <li>Created Register page</li>
+      <li>Tweaked colours, style, and format of web layout</li>
+    </ul>
+
+    <p><b>October 4, 2015</b></p>
+    <ul>
+      <li>Added content to Contact page</li>
+      <li>Added content to About page</li>
+      <li>Added content to Leaderboard page</li>
+      <li>Added username and password textboxes and submit and reset buttons to Register page</li>
+      <li>Added comments to all pages</li>
+    </ul>
+
+    <p><b>October 5, 2015</b></p>
+    <ul>
+      <li>Added cat gif to all pages</li>
+      <li>Added content to the Login page</li>
+      <li>Added content to the Admin page</li>
+      <li>Added "It's Raining Cats!" game preview to the Home page</li>
+      <li>Added changelog</li>
+    </ul>
+  </div>
+
+
+  <div class="col-md-4">
+    <h3>Lab 2</h3>
+    <hr />
+    <p><b>October 17, 2015</b></p>
+    <ul>
+      <li>Migrated project to Microsoft Visual Studio</li>
+      <li>Changed website theme</li>
+      <li>Fixed layout</li>
+    </ul>
+    <p><b>October 19, 2015</b></p>
+    <ul>
+      <li>Integrated games Monster Wants Candy (MWC) and Solo Pong (SP)</li>
+      <li>Leaderboard model and created properties</li>
+    </ul>
+
+    <p><b>October 20, 2015</b></p>
+    <ul>
+      <li>Created separate leaderboard controllers for MWC and SP</li>
+      <li>Created separate views for MWC and SP</li>
+      <li>tweaked views for MWC and SP</li>
+      <li>Created database</li>
+    </ul>
+
+    <p><b>October 22, 2015</b></p>
+    <ul>
+      <li>Did a database migration to fix exceptions</li>
+      <li>Worked on leaderboard displays</li>
+      <li>Added leaderboard links to home page</li>
+    </ul>
+
+    <p><b>October 23, 2015</b></p>
+    <ul>
+      <li>Added game links to home page</li>
+      <li>Worked on leaderboard logic</li>
+      <li>Gameover now redirects to the create page (hidden), then redirects to apprpriate leaderboard</li>
+    </ul>
+
+    <p><b>October 24, 2015</b></p>
+    <ul>
+      <li>Fixed ScoreDate bug (would always display 01/01/0001 12:00:00 AM)</li>
+      <li>Worked on leaderboard logic</li>
+      <li>Created UserStat model</li>
+    </ul>
+
+    <p><b>October 25, 2015</b></p>
+    <ul>
+      <li>Fixed leaderboard sorting issues, leaderboards now display info from highest score to lowest</li>
+      <li>Worked on user stat display logic</li>
+      <li>Created separate changelog page</li>
+      <li>Tweaked _Layouts</li>
+    </ul>
+
+    <p><b>October 26, 2015</b></p>
+    <ul>
+      <li>Worked on user stat display logic</li>
+      <li>Tweaked home, about, contact pages</li>
+      <li>Cleaned up dead code, unused files</li>
+      <li>Updated changelog</li>
+    </ul>
+  </div>
+
+
+  <div class="col-md-4">
+    <h3>Lab 3</h3>
+    <hr />
+    <p><b>November 4, 2015</b></p>
+    <ul>
+      <li>Deleted one controller</li>
+      <li>Changed UserStat model</li>
+      <li>Modified Leaderboards controller</li>
+      <li>Got user stats to work</li>
+      <li>Modified views</li>
+      <li>Applied peer review feedback</li>
+      <li>Applied feedback from instructor</li>
+    </ul>
+    <p><b>November 9, 2015</b></p>
+    <ul>
+      <li>Changed model display name</li>
+      <li>Added Age to register page</li>
+      <li>Added guest score not saved page</li>
+      <li>Guests cannot save scores</li>
+      <li>Tweaked links on login and register pages</li>
+    </ul>
+    <p><b>November 13, 2015</b></p>
+    <ul>
+      <li>Added more migrations</li>
+      <li>Modified database</li>
+    </ul>
+    <p><b>November 15, 2015</b></p>
+    <ul>
+      <li>Added admin role and guest account</li>
+      <li>Added admin actions</li>
+      <li>Added edit and delete actions for leaderboards</li>
+      <li>Modified views for admin, user, and user not logged in</li>
+    </ul>
+    <p><b>November 16, 2015</b></p>
+    <ul>
+      <li>Fixed error where multiple users and game would show up in dropdown lists</li>
+      <li>Tweaked layout of admin pages</li>
+      <li>Worked on logic for deleting player scores and leaderboard scores</li>
+    </ul>
+    <p><b>November 17, 2015</b></p>
+    <ul>
+      <li>Fixed delete actions for admins</li>
+      <li>Got guest account to work</li>
+      <li>Started on actions for promoting users to admin and removing admin privileges</li>
+      <li>Worked on logic for ManageLbController</li>
+    </ul>
+    <p><b>November 18, 2015</b></p>
+    <ul>
+      <li>Fixed errors about not being able to connect to SQL server</li>
+      <li>Got admin promotion/revoke actions to work</li>
+      <li>Cleaned up dead/unused code</li>
+      <li>Tweaked a few view pages</li>
+      <li>Deleted magic values</li>
+      <li>Updated "future plans" on homepage and updated changelog</li>
+    </ul>
+    <p><b>November 19, 2015</b></p>
+    <ul>
+      <li>
+        Did thorough testing of:
+        <ul>
+          <li>Promoting/revoking admins</li>
+          <li>Admin actions for deleting player scores, a leaderboard, and all leaderboard</li>
+          <li>Made sure account creation worked and age field was required</li>
+          <li>Made sure regular players can only edit and delete their own scores</li>
+          <li>Made sure admins can edit and delete all scores</li>
+          <li>Made sure players not logged in don't have their score saved</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Lab 4</h3>
+    <hr />
+    <p><b>December 2, 2015</b></p>
+    <ul>
+      <li>Removed edit action</li>
+      <li>Added personal leaderboard in the Manage Account page</li>
+      <li>Added a view that displays both leaderboards</li>
+      <li>Added leaderboard link in nav bar</li>
+      <li>User stats links in the Manage Account page</li>
+      <li>Modified the layout of ManageAdmins page</li>
+      <li>Modified promote/demote admin actions</li>
+      <li>Changed from Monster Games to Aurora Games</li>
+      <li>Cleaned up unused code and pages</li>
+      <li>Modified links and views</li>
+    </ul>
+    <p><b>December 3, 2015</b></p>
+    <ul>
+      <li>Renamed links</li>
+      <li>Cleaned up view pages</li>
+      <li>Tested website prior to deployment</li>
+      <li>Deployed project to azure website</li>
+      <li>Fixed admin and guest accounts</li>
+      <li>Fixed leadrboard issues</li>
+      <li>Updated changelog</li>
+      <li>Ceased working on project</li>
+    </ul>
+  </div>
+</div>

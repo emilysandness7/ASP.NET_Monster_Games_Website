@@ -1,0 +1,68 @@
+﻿@model MonsterGames.Models.Leaderboard
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Leaderboard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScoreDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScoreDate)
+        </dd>
+
+    </dl>
+
+  @*determines which leaderboard to redirect to after create*@
+  @{var redirectAction = "";}
+  @if (Model.GameName.Equals("Monster Wants Candy"))
+  {
+  redirectAction = "MWCLeaderboard";
+  }
+  else
+  {
+  redirectAction = "SPLeaderboard";
+  }
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Leaderboard", redirectAction)
+        </div>
+    }
+</div>

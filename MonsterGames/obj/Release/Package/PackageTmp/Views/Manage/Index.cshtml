@@ -1,0 +1,71 @@
+﻿@model MonsterGames.Models.IndexViewModel
+
+@{
+  ViewBag.Title = "Manage Account";
+}
+
+<h2>Manage Account</h2>
+<hr />
+
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <h3>Change your account settings</h3>
+      <hr />
+
+      <dt>Password:</dt>
+      <dd>
+        [
+        @if (!(Model == null))
+        {
+          if (Model.HasPassword)
+          {
+            @Html.ActionLink("Change your password", "ChangePassword")
+          }
+          else
+          {
+            @Html.ActionLink("Create", "SetPassword")
+          }
+        }
+        else 
+        {
+          ViewBag.Fail = "No statistics to show";
+          @Html.ActionLink("Change your password", "ChangePassword")
+        }
+        ]
+      </dd>
+    </dl>
+  </div>
+
+
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <h3>Game Statistics</h3>
+      <hr />
+
+      <dt>My leaderboards:</dt>
+      <dd>
+        [
+        @Html.ActionLink("My Leaderboard", "PlayerLb", "Leaderboards")
+        ]
+      </dd>
+
+      <dt>Monster Wants Candy:</dt>
+      <dd>
+        [
+        @Html.ActionLink("Monster Wants Candy Stats", "MWCStats")
+        ]
+      </dd>
+
+      <dt>Solo Pong:</dt>
+      <dd>
+        [
+        @Html.ActionLink("Solo Pong Stats", "SPStats")
+        ]
+      </dd>
+    </dl>
+    <p style="color:brown">@ViewBag.Fail</p>
+  </div>
+</div>

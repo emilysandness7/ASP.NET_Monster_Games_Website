@@ -1,0 +1,54 @@
+﻿@* This page is inspired by Levi Cherry-Allen's ManageAdministrators page.
+  Page design credit goes to him.*@
+
+@model IEnumerable<MonsterGames.Models.ApplicationUser>
+@using MonsterGames.Models;
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@{
+  var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+}
+@{
+  ViewBag.Title = "Manage Admins";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Promote/Demote Admins</h2>
+<br/>
+
+<table class="table">
+  <tr>
+    <th>
+      @Html.DisplayNameFor(model => model.Email)
+    </th>
+    <th>
+       Is Admin?
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+
+  @foreach (var item in Model)
+  {
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => item.Email)
+      </td>
+      <td>
+        @{
+    var isAdmin = "";
+    isAdmin = userManager.IsInRole(item.Id, ApplicationConstants.Admin) ? "Yes" : "No";
+        }
+        @isAdmin
+      </td>
+      <td>
+        @Html.ActionLink("Promote", "PromoteAdmin", new { playerName = item.Id }) |
+        @Html.ActionLink("Demote", "RevokeAdmin", new { playerName = item.Id })
+      </td>
+    </tr>
+  }
+</table>
+<p>
+  @Html.ActionLink("Back to Admin Controls Page", "Index")
+</p>
